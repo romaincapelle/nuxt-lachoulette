@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>1</h1>
+  <div class="w-full max-w-xs">
     <form
+      class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
       name="contactus"
       action="/thanks"
       method="post"
@@ -10,78 +10,53 @@
     >
       <input type="hidden" name="form-name" value="contactus" />
       <div>
-        <label for="name">Name:</label>
-        <input class="border" type="text" name="name" required />
+        <label class="block mb-2 text-sm font-bold text-gray-700" for="name"
+          >Name:</label
+        >
+        <input
+          class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+          type="text"
+          name="name"
+          required
+        />
       </div>
       <div>
-        <input class="border" type="email" name="email" required />
-        <label for="email">Email:</label>
+        <label class="block mb-2 text-sm font-bold text-gray-700" for="email"
+          >Email:</label
+        >
+        <input
+          class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+          type="email"
+          name="email"
+          required
+        />
       </div>
       <div>
-        <textarea class="border" name="message" required></textarea>
         <label for="message">Message:</label>
+        <textarea
+          class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+          name="message"
+          required
+        ></textarea>
       </div>
-      <button class="border" type="submit" value="Send message">Send</button>
-    </form>
-    <h2>2</h2>
-    <div class="w-full max-w-xs">
-      <form
-        class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
-        name="contactus"
-        action="/thanks"
-        method="post"
-        netlify
-        netlify-honeypot="bot-field"
+      <div>
+        <select
+          aria-label="Currency"
+          class="h-full py-0 pl-2 text-gray-500 bg-transparent border-transparent form-select pr-7 sm:text-sm sm:leading-5"
+        >
+          <option>USD</option>
+          <option>CAD</option>
+          <option>EUR</option>
+        </select>
+      </div>
+      <button
+        class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+        type="submit"
+        value="Send message"
       >
-        <input type="hidden" name="form-name" value="contactus" />
-        <div class="mb-4">
-          <label
-            class="block mb-2 text-sm font-bold text-gray-700"
-            for="username"
-          >
-            Username
-          </label>
-          <input
-            id="username"
-            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder="Username"
-          />
-        </div>
-        <div class="mb-6">
-          <label
-            class="block mb-2 text-sm font-bold text-gray-700"
-            for="password"
-          >
-            Password
-          </label>
-          <input
-            id="password"
-            class="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            type="password"
-            placeholder="******************"
-          />
-          <p class="text-xs italic text-red-500">Please choose a password.</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Sign In
-          </button>
-          <a
-            class="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800"
-            href="#"
-          >
-            Forgot Password?
-          </a>
-        </div>
-      </form>
-      <p class="text-xs text-center text-gray-500">
-        &copy;2020 Acme Corp. All rights reserved.
-      </p>
-    </div>
+        Send
+      </button>
+    </form>
   </div>
 </template>
 
