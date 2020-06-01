@@ -10,6 +10,7 @@
       />
       <span>{{ panelist }}</span>
     </label>
+    <button>Submit</button>
   </form>
 </template>
 <script>
@@ -21,7 +22,8 @@ export default {
     return {
       form: {
         askPerson: ''
-      }
+      },
+      panelists: ['Evan You', 'Chris Fritz']
     }
   },
   methods: {
