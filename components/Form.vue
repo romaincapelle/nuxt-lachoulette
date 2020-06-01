@@ -42,11 +42,14 @@
       <div>
         <select
           aria-label="Currency"
-          class="h-full py-0 pl-2 text-gray-500 bg-transparent border-transparent form-select pr-7 sm:text-sm sm:leading-5"
-        >
-          <option>USD</option>
-          <option>CAD</option>
-          <option>EUR</option>
+          name="currency"
+          class="w-full h-8 py-0 text-gray-500 bg-transparent border pr-7 sm:text-sm sm:leading-5"
+          ><option value="" disabled="" selected=""
+            >Choose Flooring type</option
+          >
+          <option value="usd" name="usd">USD</option>
+          <option value="cad" name="cad">CAD</option>
+          <option value="eur" name="eur">EUR</option>
         </select>
       </div>
       <button
