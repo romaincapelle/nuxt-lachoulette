@@ -3,35 +3,21 @@
     <BeerForm @submit="addBeer" />
 
     <h3>beer</h3>
-    <ul>
-      <ListBeer
-        v-for="(beer, i) in sortedBeers"
-        :key="i"
-        :beer="beer"
-        @delete="deleteBeer(i)"
-      />
-    </ul>
+    <ul></ul>
   </div>
 </template>
 
 <script>
 import BeerForm from './BeerForm.vue'
-import ListBeer from './ListBeer.vue'
 export default {
   name: 'BeerList',
   components: {
-    BeerForm,
-    ListBeer
+    BeerForm
   },
   data() {
     return {
       beers: [],
       completed: []
-    }
-  },
-  watch: {
-    sortedBeers() {
-      this.beers.sort((a, b) => a.nombreDeBiere - b.nombreDeBiere)
     }
   },
   methods: {
