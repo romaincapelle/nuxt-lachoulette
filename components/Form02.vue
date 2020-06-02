@@ -7,6 +7,7 @@
       method="post"
       netlify
       netlify-honeypot="bot-field"
+      @submit.prevent="handleSubmit"
     >
       <input type="hidden" name="form-name" value="contactus" />
       <div>
@@ -77,6 +78,27 @@ export default {
         { text: 'Biere Brune' },
         { text: 'Biere Ambrée' }
       ]
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+        )
+        .join('&')
+    },
+    handleSubmit(e) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': e.target.getAttribute('name'),
+          ...this.formData
+        })
+      })
+        .then(() => this.$router.push('/thanks'))
+        .catch((error) => alert(error))
     }
   }
 }

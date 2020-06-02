@@ -1,16 +1,17 @@
 <template>
   <form id="biere-form" @submit.prevent="submit">
-    <input
+    <!--  <input
       v-model.number="biere.nombreDeBiere"
       type="text"
       placeholder="Ex: 24"
     />
+
     <select v-model="biere.nomDeLaBiere" class="select-css">
-      <option v-for="biere in bieres" :key="biere.text" :value="biere.text">
-        {{ biere.text }}
+      <option v-for="b in bieres" :key="biere.id" :value="biere.text">
+        {{ b.text }}
       </option>
     </select>
-
+-->
     <button type="submit" title="save">Ajouter</button>
     <button
       v-if="!populateWith.empty"
@@ -41,9 +42,9 @@ export default {
       },
       selectedOption: 'C',
       bieres: [
-        { text: 'Biere Blonde' },
-        { text: 'Biere Brune' },
-        { text: 'Biere Ambrée' }
+        { text: 'Biere Blonde', id: '0001' },
+        { text: 'Biere Brune', id: '0002' },
+        { text: 'Biere Ambrée', id: '0003' }
       ]
     }
   },

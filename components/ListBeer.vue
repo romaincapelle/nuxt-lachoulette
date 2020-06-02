@@ -49,7 +49,10 @@ export default {
     BeerForm
   },
   props: {
-    beer: Object,
+    beer: {
+      type: { Object },
+      default: {}
+    },
     isCompleted: {
       type: Boolean,
       default: false
