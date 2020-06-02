@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form ... @submit.prevent="handleSubmit">
     <label v-for="(panelist, index) in panelists" :key="index">
       <input
         type="radio"
@@ -9,8 +9,8 @@
         @input="(ev) => (form.askPerson = ev.target.value)"
       />
       <span>{{ panelist }}</span>
+      <button>Submit</button>
     </label>
-    <button>Submit</button>
   </form>
 </template>
 <script>
@@ -20,10 +20,11 @@ export default {
   name: 'QAForm',
   data() {
     return {
+      panelists: ['Evan You', 'Chris Fritz'],
+      currentPanelist: 'Evan You',
       form: {
         askPerson: ''
-      },
-      panelists: ['Evan You', 'Chris Fritz']
+      }
     }
   },
   methods: {
