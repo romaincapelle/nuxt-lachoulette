@@ -15,6 +15,7 @@
           >Votre nom :</label
         >
         <input
+          v-model="formData.name"
           class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
           type="text"
           name="name"
@@ -26,6 +27,7 @@
           >Email:</label
         >
         <input
+          v-model="formData.email"
           class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
           type="email"
           name="email"
@@ -42,12 +44,11 @@
       </div>
       <div>
         <select
+          v-model="formData.currency"
           aria-label="Currency"
           name="currency"
           class="w-full h-8 py-0 text-gray-500 bg-transparent border pr-7 sm:text-sm sm:leading-5"
-          ><option value="" disabled="" selected=""
-            >Choose Flooring type</option
-          >
+          ><option value="" disabled="" selected="">Choose</option>
           <option value="usd" name="usd">USD</option>
           <option value="cad" name="cad">CAD</option>
           <option value="eur" name="eur">EUR</option>
