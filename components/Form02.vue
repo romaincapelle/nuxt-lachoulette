@@ -37,6 +37,7 @@
       <div>
         <label for="message">Message:</label>
         <textarea
+          v-model="formData.message"
           class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
           name="message"
           required
@@ -44,24 +45,29 @@
       </div>
       <div>
         <select
-          v-model="formData.currency"
-          aria-label="Currency"
-          name="currency"
+          v-model="theBeerSelected"
+          aria-label="beer"
+          name="beer"
           class="w-full h-8 py-0 text-gray-500 bg-transparent border pr-7 sm:text-sm sm:leading-5"
           ><option value="" disabled="" selected="">Choose</option>
-          <option value="usd" name="usd">USD</option>
-          <option value="cad" name="cad">CAD</option>
-          <option value="eur" name="eur">EUR</option>
+          <option value="choulette" name="choulette">choulette</option>
+          <option value="heinekein" name="heinekein">heinekein</option>
+          <option value="leffe" name="leffe">leffe</option>
         </select>
       </div>
-      <button
-        class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-        type="submit"
-        value="Send message"
-      >
-        Send
-      </button>
+      <button @click="addThisBeer">add beer</button>
+      <p>beerSelection: {{ formData.beerselection }}</p>
+      <p>
+        <button
+          class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          type="submit"
+          value="Send message"
+        >
+          Send
+        </button>
+      </p>
     </form>
+
     <p>{{ formData }}</p>
   </div>
 </template>
@@ -70,20 +76,14 @@
 export default {
   data() {
     return {
-      formData: {},
-      biere: {
-        nomDeLaBiere: '',
-        nombreDeBiere: 0
-      },
-      selectedOption: 'C',
-      bieres: [
-        { text: 'Biere Blonde' },
-        { text: 'Biere Brune' },
-        { text: 'Biere Ambrée' }
-      ]
+      beerSelection: [],
+      formData: {}
     }
   },
   methods: {
+    addThisBeer() {
+      this.theBeerSelected = ''
+    },
     encode(data) {
       return Object.keys(data)
         .map(

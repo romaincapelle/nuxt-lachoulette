@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <form
-      name="contact"
+      name="contactbiere"
       method="post"
       action="/success/"
       data-netlify="true"

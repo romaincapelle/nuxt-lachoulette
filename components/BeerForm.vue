@@ -1,17 +1,17 @@
 <template>
   <form id="biere-form" @submit.prevent="submit">
-    <!--  <input
+    <input
       v-model.number="biere.nombreDeBiere"
       type="text"
       placeholder="Ex: 24"
     />
 
     <select v-model="biere.nomDeLaBiere" class="select-css">
-      <option v-for="b in bieres" :key="biere.id" :value="biere.text">
+      <option v-for="b in bieres" :key="b.id" :value="b.text">
         {{ b.text }}
       </option>
     </select>
--->
+
     <button type="submit" title="save">Ajouter</button>
     <button
       v-if="!populateWith.empty"
