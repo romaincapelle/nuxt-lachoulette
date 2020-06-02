@@ -62,6 +62,7 @@
         Send
       </button>
     </form>
+    <p>{{ formData }}</p>
   </div>
 </template>
 
@@ -69,6 +70,7 @@
 export default {
   data() {
     return {
+      formData: {},
       biere: {
         nomDeLaBiere: '',
         nombreDeBiere: 0
