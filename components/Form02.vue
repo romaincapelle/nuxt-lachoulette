@@ -44,6 +44,7 @@
         ></textarea>
       </div>
       <div>
+        <p>{{ theBeerSelected }}</p>
         <select
           v-model="theBeerSelected"
           aria-label="beer"
@@ -55,7 +56,7 @@
           <option value="leffe" name="leffe">leffe</option>
         </select>
       </div>
-      <button @click="addThisBeer">add beer</button>
+      <button @click.prevent="addThisBeer">add beer to cart</button>
       <p>beerSelection: {{ formData.beerselection }}</p>
       <p>
         <button
@@ -69,20 +70,29 @@
     </form>
 
     <p>{{ formData }}</p>
+    <p>{{ beerSelection }}</p>
+    <p>{{ cart }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Form02',
   data() {
     return {
+      theBeerSelected: [],
       beerSelection: [],
       formData: {}
     }
   },
+  computed: {
+    cart() {
+      return this.formData + ' ' + this.beerSelection
+    }
+  },
   methods: {
     addThisBeer() {
-      this.theBeerSelected = ''
+      this.beerSelection.push(this.theBeerSelected)
     },
     encode(data) {
       return Object.keys(data)

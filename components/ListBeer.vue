@@ -50,7 +50,7 @@ export default {
   },
   props: {
     beer: {
-      type: { Object },
+      type: {},
       default: {}
     },
     isCompleted: {

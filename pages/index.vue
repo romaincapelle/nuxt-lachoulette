@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div>
     <form
       name="contactbiere"
       method="post"
@@ -69,13 +69,13 @@
     <p>{{ updatedbeers }}</p>
     <p>completeFormData</p>
     <p>{{ completeFormData }}</p>
-  </Layout>
+  </div>
 </template>
 
 <script>
 import Order from '../components/Order'
 export default {
-  name: 'Formbeerindex',
+  name: 'Index',
   metaInfo: {
     title: 'Hello, world!'
   },

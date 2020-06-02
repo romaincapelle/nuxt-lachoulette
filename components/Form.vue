@@ -17,7 +17,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'QAForm',
+  name: 'Form',
   data() {
     return {
       panelists: ['Evan You', 'Chris Fritz'],
